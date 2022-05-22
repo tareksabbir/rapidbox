@@ -1,15 +1,15 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-import logo from '../../Assets/icons/flash.ico'
+import logo from '../../Assets/icons/hammer.png'
 
 const Navbar = ({ children }) => {
     return (
         <>
-            <div class="drawer drawer-end">
+            <div class="drawer drawer-end ">
                 <input id="my-drawer-3" type="checkbox" class="drawer-toggle" />
-                <div class="drawer-content flex flex-col">
+                <div class="drawer-content flex flex-col ">
 
-                    <div class="w-full navbar bg-base-100 px-5 lg:px-10 lg:mt-3 mt-2">
+                    <div class="w-full navbar px-5 lg:px-10 lg:mt-3 mt-2 ">
                         <img src={logo} className="h-10 w-10" alt="" />
                         <div class="flex-1 mx-2 text-2xl lg:text-2xl font-semibold">IndusCity</div>
                         <div class="flex-none lg:hidden">
@@ -22,7 +22,7 @@ const Navbar = ({ children }) => {
                             <ul class="menu menu-horizontal gap-x-2">
 
                                 <li><NavLink to='/' className=' rounded-lg'>Home</NavLink></li>
-                                <li><NavLink to='/service' className=' rounded-lg'>Services</NavLink></li>
+                                <li><NavLink to='/product' className=' rounded-lg'>Product</NavLink></li>
                                 <li><NavLink to='/about' className=' rounded-lg'>About</NavLink></li>
                                 <li><NavLink to='/contact' className=' rounded-lg'>Contact Us</NavLink></li>
                                 <li><NavLink to='/login' className=' rounded-lg'>Login</NavLink></li>
