@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import credit from '../../Assets/icons/credit-card.png'
 import delivery from '../../Assets/icons/fast-delivery.png'
 import desk from '../../Assets/icons/help-desk.png'
@@ -63,7 +64,9 @@ const ExtraSection = () => {
                             </div>
                         </div>
                     </div>
-                    <button class="flex mx-auto mt-16 text-black bg-primary border-0 py-2 px-8 focus:outline-none hover:bg-primary rounded text-lg">Button</button>
+                    <div className='flex justify-center mt-5 lg:mt-14'>
+                        <Link to="/product" class="inline-block bg-primary hover:bg-secondary hover:text-white active:bg-primary focus-visible:ring ring-indigo-300 text-black text-sm md:text-base font-semibold text-center rounded-lg outline-none transition duration-100 px-8 py-3">See All Product</Link>
+                    </div>
                 </div>
             </section>
         </div>

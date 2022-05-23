@@ -3,6 +3,7 @@ import tools from '../../Assets/icons/drill.png'
 import flag from '../../Assets/icons/flag.png'
 import star from '../../Assets/icons/star.png'
 import money from '../../Assets/icons/coins.png'
+import CountUp from 'react-countup';
 
 
 const Starts = () => {
@@ -23,7 +24,7 @@ const Starts = () => {
                         <div class="flex  items-center">
                             <img src={tools} className="h-11 w-11 mb-2" alt="" />
                             <div class="ml-4">
-                                <div class="text-white text-xl sm:text-2xl md:text-3xl font-bold">50+</div>
+                                <div class="text-white text-xl sm:text-2xl md:text-3xl font-bold"><CountUp end={50} duration={10} />+</div>
                                 <div class="text-primary text-sm sm:text-base">Tools</div>
                             </div>
                         </div>
@@ -31,7 +32,7 @@ const Starts = () => {
                         <div class="flex items-center">
                             <img src={flag} className="h-10 w-10 mb-2" alt="" />
                             <div class="ml-4">
-                                <div class="text-white text-xl sm:text-2xl md:text-3xl font-bold">100+</div>
+                                <div class="text-white text-xl sm:text-2xl md:text-3xl font-bold"><CountUp end={100} duration={10} />+</div>
                                 <div class="text-primary text-sm sm:text-base">Countrys</div>
                             </div>
                         </div>
@@ -40,7 +41,7 @@ const Starts = () => {
                         <div class="flex items-center">
                             <img src={star} className="h-8 w-8 mb-2" alt="" />
                             <div class="ml-4">
-                                <div class="text-white text-xl sm:text-2xl md:text-3xl font-bold">33K+</div>
+                                <div class="text-white text-xl sm:text-2xl md:text-3xl font-bold"><CountUp end={33} duration={10} />K+</div>
                                 <div class="text-primary text-sm sm:text-base">Reviews</div>
                             </div>
                         </div>
@@ -48,7 +49,7 @@ const Starts = () => {
                         <div class="flex  items-center">
                             <img src={money} className="h-8 w-8 mb-2" alt="" />
                             <div className='ml-4'>
-                                <div class="text-white text-xl sm:text-2xl md:text-3xl font-bold">120M+</div>
+                                <div class="text-white text-xl sm:text-2xl md:text-3xl font-bold"><CountUp end={120} duration={10} />M+</div>
                                 <div class="text-primary text-sm sm:text-base">Annual revenue</div>
                             </div>
                         </div>
