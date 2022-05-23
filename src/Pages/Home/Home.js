@@ -5,6 +5,7 @@ import Company from './Company';
 import ExtraSection from './ExtraSection';
 import Products from './Products';
 import Starts from './Starts';
+import Testimonials from './Testimonials';
 
 const Home = () => {
     return (
@@ -12,8 +13,10 @@ const Home = () => {
             <Banner></Banner>
             <Starts></Starts>
             <Products></Products>
-            <Company></Company>
+
             <ExtraSection></ExtraSection>
+            <Company></Company>
+            <Testimonials></Testimonials>
             <Footer></Footer>
         </div>
     );

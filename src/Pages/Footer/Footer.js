@@ -1,5 +1,5 @@
 import React from 'react';
-import img from '../../Assets/icons/hammer.png'
+import img from '../../Assets/icons/tool-box (1).png'
 
 const Footer = () => {
     return (
@@ -11,9 +11,9 @@ const Footer = () => {
 
                             <div class="lg:-mt-1 mb-4 flex">
 
-                                <img src={img} className="h-10 w-10" alt="" />
+                                <img src={img} className="h-8 w-8" alt="" />
 
-                                <div class="flex-1 mx-2 text-2xl lg:text-2xl font-semibold">IndusCity</div>
+                                <div class="flex-1 mx-2 text-2xl lg:text-2xl font-semibold">ToolsHuB</div>
 
                             </div>
 

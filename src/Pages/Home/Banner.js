@@ -14,8 +14,8 @@ const Banner = () => {
                         <div class="bg-secondary mix-blend-multiply absolute inset-0"></div>
 
                         <div class="sm:max-w-xl flex flex-col items-center relative p-4">
-                            <p class="text-primary text-lg sm:text-xl text-center mb-4 md:mb-8">Very proud to introduce</p>
-                            <h1 class="text-white text-4xl sm:text-5xl md:text-6xl font-bold text-center mb-8 md:mb-12">Revolutionary way to build the web</h1>
+                            <p class="text-primary text-lg sm:text-xl text-center mb-4 md:mb-8">Tools that come in handy</p>
+                            <h1 class="text-white text-4xl sm:text-4xl md:text-5xl font-bold text-center mb-8 md:mb-12">Fom hand tools sets to other essentials ,We have got your covered</h1>
 
                             <div class="w-full flex flex-col sm:flex-row sm:justify-center gap-2.5">
                                 <a href="/" class="inline-block bg-primary hover:bg-secondary hover:text-white active:bg-primary focus-visible:ring ring-indigo-300 text-black text-sm md:text-base font-semibold text-center rounded-lg outline-none transition duration-100 px-8 py-3">Start now</a>

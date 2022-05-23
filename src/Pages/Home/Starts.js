@@ -14,7 +14,7 @@ const Starts = () => {
                     <div class="mb-8 md:mb-12">
                         <h2 class="text-gray-800 text-2xl lg:text-3xl font-bold text-center mb-4 md:mb-6">Our Business By The Numbers</h2>
 
-                        <p class="max-w-screen-md text-gray-500 md:text-lg text-center mx-auto">This is a section of some simple filler text, also known as placeholder text. It shares some characteristics of a real written text but is random or otherwise generated.</p>
+                        <p class="max-w-screen-md text-gray-500 md:text-lg text-center mx-auto">We deliver the right products with the best service and value across every channel and community we serve.Every aspect of aur business and strategy is rooted in that mission </p>
                     </div>
 
 
