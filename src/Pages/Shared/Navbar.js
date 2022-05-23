@@ -1,8 +1,17 @@
+import { signOut } from 'firebase/auth';
 import React from 'react';
+import { useAuthState } from 'react-firebase-hooks/auth';
 import { Link, NavLink } from 'react-router-dom';
 import logo from '../../Assets/icons/tool-box (1).png'
+import auth from '../../firebase.init';
 
 const Navbar = ({ children }) => {
+    const [user] = useAuthState(auth);
+
+    const handleLogout = () => {
+        signOut(auth);
+
+    }
     return (
         <>
             <div class="drawer drawer-end ">
@@ -26,7 +35,13 @@ const Navbar = ({ children }) => {
                                 <li><NavLink to='/review' className=' rounded-lg'>Reviews</NavLink></li>
                                 <li><NavLink to='/blog' className=' rounded-lg'>Blogs</NavLink></li>
                                 <li><NavLink to='/portpholio' className=' rounded-lg'>Portpholio</NavLink></li>
-                                <li><NavLink to='/login' className=' rounded-lg'>Login</NavLink></li>
+                                {
+                                    user ?
+                                        <li><NavLink onClick={handleLogout} to='/login' className=' rounded-lg'>Logout</NavLink></li>
+                                        :
+                                        <li><NavLink to='/login' className=' rounded-lg'>Login</NavLink></li>
+                                }
+
                                 <li><Link to='/contact' tabindex="0" class="btn btn-secondary btn-outline m-1 rounded-lg">Contact Us</Link></li>
 
                             </ul>
@@ -46,6 +61,12 @@ const Navbar = ({ children }) => {
 
                         <li><NavLink to='/login' className=' rounded-lg'>Login</NavLink></li>
                         <li><Link to='/contact' tabindex="0" class="btn btn-primary btn-outline m-1 rounded-lg">Contact Us</Link></li>
+                        {
+                            user ?
+                                <li><NavLink onClick={handleLogout} to='/login' className=' rounded-lg'>Logout</NavLink></li>
+                                :
+                                <li><NavLink to='/login' className=' rounded-lg'>Login</NavLink></li>
+                        }
 
                     </ul>
 
