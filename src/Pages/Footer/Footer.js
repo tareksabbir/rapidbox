@@ -13,7 +13,7 @@ const Footer = () => {
 
                                 <img src={img} className="h-8 w-8" alt="" />
 
-                                <div class="flex-1 mx-2 text-2xl lg:text-2xl font-semibold">ToolsHuB</div>
+                                <div class="flex-1 mx-2 text-2xl lg:text-2xl font-semibold">Rapidbox</div>
 
                             </div>
 
