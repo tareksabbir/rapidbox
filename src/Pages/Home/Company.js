@@ -40,6 +40,7 @@ const Company = () => {
                             <img src={zola} className='h-8 grayscale' alt="" />
                         </div>
 
+
                         <div class="h-16 sm:h-32 flex justify-center items-center bg-gray-100 text-gray-400 rounded-lg p-4">
                             <img src={big} className='h-14 grayscale' alt="" />
                         </div>
