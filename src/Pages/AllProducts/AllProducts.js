@@ -5,7 +5,7 @@ import Footer from '../Footer/Footer';
 const Products = () => {
     const [products, setProducts] = useState([]);
     useEffect(() => {
-        fetch('services.json')
+        fetch('http://localhost:5000/tools')
             .then(res => res.json())
             .then(data => setProducts(data))
     }, [])

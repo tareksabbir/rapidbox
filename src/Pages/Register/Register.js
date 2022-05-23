@@ -6,7 +6,7 @@ import { useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import { useUpdateProfile } from 'react-firebase-hooks/auth';
 import Swal from 'sweetalert2';
 import Loading from '../Shared/Loading';
-// import useToken from '../../Hooks/useToken';
+import useToken from '../../Hooks/useToken';
 
 const Register = () => {
     const [email, setEmail] = useState('');
@@ -17,7 +17,7 @@ const Register = () => {
     const [signInWithGoogle, googleUser, googleLoading] = useSignInWithGoogle(auth);
     const [updateProfile, updating] = useUpdateProfile(auth);
     const [displayName, setDisplayName] = useState('');
-    // const [token] = useToken(user || googleUser)
+    const [token] = useToken(user || googleUser)
 
     const handleNamelBlur = event => {
         setDisplayName(event.target.value)
@@ -60,7 +60,7 @@ const Register = () => {
     }
 
     useEffect(() => {
-        if ((user || googleUser)) {
+        if ((user || googleUser) && token) {
             Swal.fire(
                 'Good job!',
                 'Registration Done Successfully!',
@@ -68,7 +68,7 @@ const Register = () => {
             )
             navigate('/');
         }
-    }, [user, googleUser, navigate])
+    }, [user, googleUser, navigate, token])
 
 
 

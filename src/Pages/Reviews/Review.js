@@ -2,6 +2,8 @@ import React from 'react';
 import Footer from '../Footer/Footer';
 
 const Review = () => {
+    const current = new Date();
+    console.log(current);
     return (
         <>
             <div class="bg-white py-6 sm:py-8 lg:py-12">

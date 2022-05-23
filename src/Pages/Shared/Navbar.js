@@ -36,6 +36,9 @@ const Navbar = ({ children }) => {
                                 <li><NavLink to='/blog' className=' rounded-lg'>Blogs</NavLink></li>
                                 <li><NavLink to='/portpholio' className=' rounded-lg'>Portpholio</NavLink></li>
                                 {
+                                    user && <li><NavLink to="/dashboard" className=' rounded-lg'>Dashboard</NavLink></li>
+                                }
+                                {
                                     user ?
                                         <li><NavLink onClick={handleLogout} to='/login' className=' rounded-lg'>Logout</NavLink></li>
                                         :
@@ -59,14 +62,14 @@ const Navbar = ({ children }) => {
                         <li><NavLink to='/blog' className=' rounded-lg'>Blogs</NavLink></li>
                         <li><NavLink to='/portpholio' className=' rounded-lg'>Portpholio</NavLink></li>
 
-                        <li><NavLink to='/login' className=' rounded-lg'>Login</NavLink></li>
-                        <li><Link to='/contact' tabindex="0" class="btn btn-primary btn-outline m-1 rounded-lg">Contact Us</Link></li>
                         {
                             user ?
                                 <li><NavLink onClick={handleLogout} to='/login' className=' rounded-lg'>Logout</NavLink></li>
                                 :
                                 <li><NavLink to='/login' className=' rounded-lg'>Login</NavLink></li>
                         }
+                        <li><Link to='/contact' tabindex="0" class="btn btn-primary btn-outline m-1 rounded-lg">Contact Us</Link></li>
+
 
                     </ul>
 
