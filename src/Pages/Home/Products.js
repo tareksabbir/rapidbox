@@ -37,7 +37,7 @@ const Products = () => {
 
                                     <div className='flex justify-between items-center mt-3'>
                                         <h2 className='text-secondary text-xl font-semibold'>$ {product.price}<span className='text-sm'>/per pice</span></h2>
-                                        <Link to='/' className='bg-primary text-black font-semibold text-sm rounded-lg px-4 py-1'>Order</Link>
+                                        <Link to={`/purchase/${product._id}`} className='bg-primary text-black font-semibold text-sm rounded-lg px-4 py-1'>Order</Link>
 
                                     </div>
                                 </div>

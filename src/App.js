@@ -16,7 +16,9 @@ import ManageAllOrder from "./Pages/Dahboard/ManageAllOrder";
 import AddProduct from "./Pages/Dahboard/AddProduct";
 import MakeAdmin from "./Pages/Dahboard/MakeAdmin";
 import ManageProducts from "./Pages/Dahboard/ManageProducts";
-import Error from "./Pages/Error/Error";
+// import Error from "./Pages/Error/Error";
+import Portpholio from "./Pages/Portpholio/Portpholio";
+import Purchase from "./Pages/AllProducts/Purchase";
 
 
 
@@ -30,8 +32,11 @@ function App() {
           <Route path="/review" element={<Review></Review>}></Route>
           <Route path="/blog" element={<Blog></Blog>}></Route>
           <Route path="/login" element={<Login></Login>}></Route>
+          <Route path="/portpholio" element={<Portpholio></Portpholio>}></Route>
           <Route path="/register" element={<Register></Register>}></Route>
-          <Route path="/product" element={<RequireAuth><AllProducts></AllProducts></RequireAuth>}
+          <Route path="/product" element={<AllProducts></AllProducts>}
+          ></Route>
+          <Route path="/purchase/:id" element={<RequireAuth><Purchase></Purchase></RequireAuth>}
           ></Route>
           <Route path="/dashboard" element={<RequireAuth><Dashboard></Dashboard></RequireAuth>}>
             <Route index element={<MyOrders></MyOrders>}></Route>
@@ -42,7 +47,7 @@ function App() {
             <Route path="make_admin" element={<MakeAdmin></MakeAdmin>}></Route>
             <Route path="manage_products" element={<ManageProducts></ManageProducts>}></Route>
           </Route>
-          <Route path="*" element={<Error></Error>}></Route>
+          {/* <Route path="*" element={<Error></Error>}></Route> */}
 
         </Routes>
       </Navbar>

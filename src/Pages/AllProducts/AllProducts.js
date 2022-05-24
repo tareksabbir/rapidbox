@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import Footer from '../Footer/Footer';
 
+
 const Products = () => {
     const [products, setProducts] = useState([]);
     useEffect(() => {
@@ -12,6 +13,7 @@ const Products = () => {
     const displayContent = (text) => {
         return text.length < 50 ? text : text.slice(0, 50) + "...";
     };
+
 
     return (
         <>
@@ -26,7 +28,9 @@ const Products = () => {
                     </div>
                     <div class="flex flex-wrap -m-4">
                         {
-                            products.map(product => <div class="xl:w-1/4 md:w-1/2 p-4">
+                            products.map(product => <div
+                                key={product._id}
+                                class="xl:w-1/4 md:w-1/2 p-4">
                                 <div class="bg-white p-6 rounded-lg shadow-xl">
                                     <img class="h-52 rounded mx-auto object-cover object-center mb-6" src={product.img} alt="content" />
                                     <h3 class="tracking-widest text-primary text-xs font-semibold title-font">BEST SELLING</h3>
@@ -36,7 +40,7 @@ const Products = () => {
 
                                     <div className='flex justify-between items-center mt-3'>
                                         <h2 className='text-secondary text-xl font-semibold'>$ {product.price}<span className='text-sm'>/per pice</span></h2>
-                                        <Link to='/' className='bg-primary text-black font-semibold text-sm rounded-lg px-4 py-1'>Order</Link>
+                                        <Link to={`/purchase/${product._id}`} className='bg-primary text-black font-semibold text-sm rounded-lg px-4 py-1'>Order</Link>
 
                                     </div>
                                 </div>
