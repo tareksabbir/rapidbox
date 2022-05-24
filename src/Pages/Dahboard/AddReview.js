@@ -1,19 +1,23 @@
 import React from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
+import { useNavigate } from 'react-router-dom';
+import Swal from 'sweetalert2';
 
 import auth from '../../firebase.init';
 
 const AddReview = () => {
     const [user] = useAuthState(auth);
+    const navigate = useNavigate();
 
     const reviewHandle = event => {
+
         event.preventDefault();
         const name = event.target.name.value;
         const email = event.target.email.value;
-        // const date = event.target.date.value;
+        const date = event.target.date.value;
         const stars = event.target.stars.value;
         const massage = event.target.massage.value;
-        const review = { name, email, stars, massage }
+        const review = { name, email, stars, massage, date }
         console.log(review)
 
         fetch('http://localhost:5000/review', {
@@ -26,7 +30,12 @@ const AddReview = () => {
             .then(res => res.json())
             .then(data => {
                 console.log(data)
-                alert('Product added');
+                Swal.fire(
+                    'Thank You For Your Review!',
+                    'Your review has been posted!',
+                    'success'
+                )
+                navigate('/review');
                 event.target.reset();
             })
     }
