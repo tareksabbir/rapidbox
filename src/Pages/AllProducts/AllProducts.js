@@ -28,7 +28,7 @@ const Products = () => {
                     </div>
                     <div class="flex flex-wrap -m-4">
                         {
-                            products.map(product => <div
+                            [...products].reverse().map(product => <div
                                 key={product._id}
                                 class="xl:w-1/4 md:w-1/2 p-4">
                                 <div class="bg-white p-6 rounded-lg shadow-xl">

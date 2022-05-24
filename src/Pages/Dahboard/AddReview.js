@@ -43,7 +43,7 @@ const AddReview = () => {
     return (
         <div>
             <div class="bg-white py-6 sm:py-8 lg:py-12">
-                <div class="max-w-screen-2xl px-4 md:px-8 mx-auto lg:ml-36">
+                <div class="max-w-screen-2xl px-4 md:px-8 mx-auto lg:ml-52">
 
                     <div class="mb-10 md:mb-16">
                         <h2 class="text-gray-800 text-2xl lg:text-4xl font-bold  mb-4 md:mb-6">Add Your Review Here</h2>
@@ -51,11 +51,11 @@ const AddReview = () => {
                     <form onSubmit={reviewHandle} className="max-w-screen-md grid sm:grid-cols-2 gap-4">
                         <div>
                             <label className="inline-block text-gray-800 text-sm sm:text-base mb-2">Your Name*</label>
-                            <input type="text" name="name" className="w-full bg-gray-50 text-gray-800 border focus:ring ring-indigo-300 rounded outline-none transition duration-100 px-3 py-2" required defaultValue={user.displayName} />
+                            <input type="text" name="name" className="w-full bg-gray-50 text-gray-800 border focus:ring ring-indigo-300 rounded outline-none transition duration-100 px-3 py-2" required defaultValue={user?.displayName} />
                         </div>
                         <div>
                             <label className="inline-block text-gray-800 text-sm sm:text-base mb-2">Email Id*</label>
-                            <input type="text" name="email" className="w-full bg-gray-50 text-gray-800 border focus:ring ring-indigo-300 rounded outline-none transition duration-100 px-3 py-2" required defaultValue={user.email} />
+                            <input type="text" name="email" className="w-full bg-gray-50 text-gray-800 border focus:ring ring-indigo-300 rounded outline-none transition duration-100 px-3 py-2" required defaultValue={user?.email} />
                         </div>
 
 
