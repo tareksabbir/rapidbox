@@ -35,8 +35,8 @@ const Products = () => {
                                     <img class="h-52 rounded mx-auto object-cover object-center mb-6" src={product.img} alt="content" />
                                     <h3 class="tracking-widest text-primary text-xs font-semibold title-font">BEST SELLING</h3>
                                     <h2 class="text-lg text-gray-900 font-medium title-font mb-1">{product.name}</h2>
-                                    <p class="leading-relaxed text-base"><span className='font-semibold text-black'>Minimum Order: </span>{product.minimumOrder} pice</p>
-                                    <p class="leading-relaxed text-base">{displayContent(product.description)}</p>
+                                    <p class="leading-relaxed text-base"><span className='font-semibold text-black text-sm'>Minimum Order: </span>{product.minimumOrder} pice</p>
+                                    <p class="leading-relaxed  text-sm">{displayContent(product.description)}</p>
 
                                     <div className='flex justify-between items-center mt-3'>
                                         <h2 className='text-secondary text-xl font-semibold'>$ {product.price}<span className='text-sm'>/per pice</span></h2>
