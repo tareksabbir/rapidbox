@@ -25,11 +25,10 @@ const Dashboard = () => {
                         <li><Link to='/dashboard' className=' text-white hover:bg-gray-400 lg:mt-5 '>My Profile</Link></li>
                         <li><NavLink to='/dashboard/myOrder' className=' text-white hover:bg-gray-400 lg:mt-5 '>My Orders</NavLink></li>
                         <li><NavLink to='/dashboard/reviews' className=' text-white hover:bg-gray-400 lg:mt-5 '>Add Review</NavLink></li>
-
+                        <li><NavLink to='/dashboard/manage_products' className=' text-white hover:bg-gray-400 lg:mt-5'>Manage Products</NavLink></li>
                         <li><NavLink to='/dashboard/manage_all_orders' className=' text-white hover:bg-gray-400 lg:mt-5  '>Manage All Orders</NavLink></li>
                         <li><NavLink to='/dashboard/add_product' className=' text-white hover:bg-gray-400 lg:mt-5 '>Add Product</NavLink></li>
                         <li><NavLink to='/dashboard/make_admin' className=' text-white hover:bg-gray-400 lg:mt-5 '>Make Admin</NavLink></li>
-                        <li><NavLink to='/dashboard/manage_products' className=' text-white hover:bg-gray-400 lg:mt-5'>Manage Products</NavLink></li>
 
 
 

@@ -1,11 +1,20 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
-import { useParams } from 'react-router-dom';
+
+import Swal from 'sweetalert2';
 import auth from '../../firebase.init';
 
 const MyProfile = () => {
     const [user] = useAuthState(auth);
-    const { email } = useParams();
+
+    const [email, setEmail] = useState({})
+    useEffect(() => {
+        const url = `http://localhost:5000/user/${user.email}`;
+        fetch(url)
+            .then(res => res.json())
+            .then(data => setEmail(data))
+    })
+
 
     const profileUpdate = event => {
         event.preventDefault();
@@ -17,13 +26,12 @@ const MyProfile = () => {
         const company = event.target.company.value;
         const about = event.target.about.value;
 
+
         const profile = { displayName, gender, education, photoURL, about, company, email }
         console.log(profile);
-
-
         const url = `http://localhost:5000/user/${email}`;
         fetch(url, {
-            method: 'PUT',
+            method: 'PATCH',
             headers: {
                 'Content-Type': 'application/json',
             },
@@ -31,8 +39,12 @@ const MyProfile = () => {
         })
             .then(res => res.json())
             .then(data => {
-                console.log(data)
-                alert('Product added');
+                Swal.fire(
+                    'Congratulation!',
+                    'Your profile has been updated!',
+                    'success'
+                )
+
                 event.target.reset();
             })
     }
@@ -41,34 +53,23 @@ const MyProfile = () => {
         <>
             <section class="text-black body-font">
                 <div class="container px-5  mx-auto flex flex-col">
-                    <div class="lg:w-5/6 w-full mt-10 mx-auto bg-slate-100 p-14">
+                    <div class="lg:w-5/6 w-full mt-10 mx-auto bg-gray-100 p-14">
                         <div class="flex flex-col sm:flex-row shadow-2xl ">
                             <div class="sm:w-3/4 text-center sm:pr-8 sm:py-8">
-
-
                                 <div class="w-35 h-35 rounded-full inline-flex items-center justify-center bg-slate-50">
-                                    <img src={user.photoURL} alt="" class="w-35 h-35 rounded-full" />
+                                    <img src={user.photoURL ? user.photoURL : email.photoURL} alt="" class="w-28 h-28 rounded-full" />
                                 </div>
                                 <div class="flex flex-col items-center text-center justify-center">
-                                    <h2 class="font-medium title-font mt-4 text-gray-900 ">{user.displayName}</h2>
+                                    <h2 class="font-medium title-font mt-4 text-gray-900 ">{email.displayName ? email.displayName : user.displayName}</h2>
                                     <div class="w-12 h-1 bg-indigo-500 rounded mt-2 mb-4"></div>
-
-                                    <p class="leading-relaxed  font-medium mb-4">Current Address: <span class="text-sm font-normal mb-4"></span></p>
-
-
                                 </div>
                             </div>
                             <div class="sm:w-2/3 sm:pl-8 sm:py-8 sm:border-l border-gray-200 sm:border-t-0 border-t mt-4 pt-4 sm:mt-0 text-center sm:text-left">
-                                <p class="leading-relaxed  font-medium mb-2">Email : <span class="text-sm font-normal mb-4">{user.email}</span></p>
-                                <p class="leading-relaxed   mb-2 font-medium">Gender : <span class="text-sm font-normal mb-4"></span></p>
-                                <p class="leading-relaxed  font-medium mb-4">About Me:</p>
-                                <p class="leading-relaxed  font-medium mb-4">Education:</p>
-
-                                <p class="leading-relaxed  font-medium mb-4">Company Name</p>
-
-
-
-
+                                <p class="leading-relaxed  font-medium mb-2">Email : <span class="text-sm font-normal mb-4">{user?.email}</span></p>
+                                <p class="leading-relaxed   mb-2 font-medium">Gender : <span class="text-sm font-normal mb-4">{email.gender}</span></p>
+                                <p class="leading-relaxed  font-medium mb-2">About Me : <span class="text-sm font-normal mb-4">{email.about}</span></p>
+                                <p class="leading-relaxed  font-medium mb-2">Education : <span class="text-sm font-normal mb-4">{email.education}</span></p>
+                                <p class="leading-relaxed  font-medium mb-2">Company Name : <span class="text-sm font-normal mb-4">{email.company}</span></p>
                             </div>
                         </div>
 
