@@ -105,13 +105,13 @@ const ManageProducts = () => {
                             </div>
                             <div className="px-4 mt-6 flex justify-between w-full  jusitfy-center items-center">
                                 <div>
-                                    <a href="/" className="hover:underline text-sm font-medium leading-none focus:outline-none focus:underline  text-gray-800">
+                                    <a href={`/purchase/${product._id}`} className="hover:underline text-sm font-medium leading-none focus:outline-none focus:underline  text-gray-800">
                                         {" "}
                                         View details
                                     </a>
                                 </div>
                                 <div>
-                                    <button className="focus:outline-none focus:ring-red-800 focus:ring-offset-2 focus:ring-2 text-sm leading-none text-red-600 hover:text-red-800">
+                                    <button onClick={() => toolDelete(product._id)} className="focus:outline-none focus:ring-red-800 focus:ring-offset-2 focus:ring-2 text-sm leading-none text-red-600 hover:text-red-800">
                                         <p>Remove Item</p>
                                     </button>
                                 </div>

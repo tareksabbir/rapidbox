@@ -25,9 +25,10 @@ const MyProfile = () => {
         const photoURL = event.target.photoURL.value;
         const company = event.target.company.value;
         const about = event.target.about.value;
+        const address = event.target.address.value;
 
 
-        const profile = { displayName, gender, education, photoURL, about, company, email }
+        const profile = { displayName, gender, education, photoURL, about, company, email, address }
         console.log(profile);
         const url = `http://localhost:5000/user/${email}`;
         fetch(url, {

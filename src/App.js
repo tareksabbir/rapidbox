@@ -19,6 +19,8 @@ import ManageProducts from "./Pages/Dahboard/ManageProducts";
 // import Error from "./Pages/Error/Error";
 import Portpholio from "./Pages/Portpholio/Portpholio";
 import Purchase from "./Pages/AllProducts/Purchase";
+import Order from "./Pages/AllProducts/Order";
+
 
 
 
@@ -38,6 +40,9 @@ function App() {
           ></Route>
           <Route path="/purchase/:id" element={<RequireAuth><Purchase></Purchase></RequireAuth>}
           ></Route>
+          <Route path="/order/:id" element={<RequireAuth><Order></Order></RequireAuth>}
+          ></Route>
+
           <Route path="/dashboard" element={<RequireAuth><Dashboard></Dashboard></RequireAuth>}>
             <Route index element={<MyProfile></MyProfile>}></Route>
             <Route path="reviews" element={<AddReview></AddReview>}></Route>
