@@ -2,7 +2,7 @@
 
 live link  [Create Here](https://rapidbox.netlify.app/).
 
-## About This Project 
+## `About This Project`
 
  * this website is for a tools manufacturer company 
  * here peaople can order tools 
@@ -19,7 +19,7 @@ live link  [Create Here](https://rapidbox.netlify.app/).
 * React firebase hook
 * Firebase
 * Tailwind css
-* React form 
+* React hook form 
 * Mongodb
 * React router
 * React quary
