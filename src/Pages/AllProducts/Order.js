@@ -7,6 +7,9 @@ import auth from '../../firebase.init';
 const Order = () => {
     const { id } = useParams();
     const [product, setProduct] = useState({});
+    const [user] = useAuthState(auth);
+    const [email, setEmail] = useState({})
+
     useEffect(() => {
         const url = `http://localhost:5000/tools/${id}`;
         fetch(url)
@@ -14,8 +17,6 @@ const Order = () => {
             .then(data => setProduct(data))
     }, [id])
 
-    const [user] = useAuthState(auth);
-    const [email, setEmail] = useState({})
     useEffect(() => {
         const url = `http://localhost:5000/user/${user.email}`;
         fetch(url)
@@ -23,12 +24,20 @@ const Order = () => {
             .then(data => setEmail(data))
     });
 
-
     const orderPrice = parseFloat(product.minimumOrder) * parseFloat(product.price)
-    const [newprice, setNewPrice] = useState()
-
+    const [newprice, setNewPrice] = useState('')
     const minimum = parseInt(product.minimumOrder);
     const max = parseInt(product.available);
+    const [shipping, setShipping] = useState('')
+
+    const handelShipping = (event) => {
+        setShipping(event.target.value);
+    }
+
+    const [billingAddress, setBillingAddress] = useState('')
+    const handelBilling = (event) => {
+        setBillingAddress(event.target.value);
+    }
 
     const countPrice = (event) => {
         const pice = event.target.value;
@@ -46,12 +55,39 @@ const Order = () => {
     }
 
 
+    const placeOrder = () => {
+        const orderId = product._id;
+        const name = product.name;
+        const bill = newprice ? newprice : orderPrice;
+        const buyerEmail = user.email;
+        const buyerName = email.displayName;
+        const shippingAddress = shipping ? shipping : email.address;
+        const billaddress = billingAddress ? billingAddress : email.address;
 
+        const orderInfo = { name, orderId, bill, buyerEmail, buyerName, shippingAddress, billaddress }
+        console.log(orderInfo)
 
+        fetch('http://localhost:5000/order', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(orderInfo),
+        })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data)
+                Swal.fire(
+                    'Thank You For Your Order!',
+                    'Please make sure your payment now!',
+                    'success'
+                )
+            })
+    }
 
     return (
         <>
-            <div className='lg:px-28 px-8'>
+            <div className='lg:px-20 px-8'>
 
                 <div className="py-14 px-4 md:px-6 2xl:px-20 2xl:container 2xl:mx-auto">
                     <div className="flex justify-start item-start space-y-2 flex-col ">
@@ -139,7 +175,7 @@ const Order = () => {
                                         </div>
 
                                     </div>
-                                    <div className="w-full flex justify-center items-center">
+                                    <div onClick={placeOrder} className="w-full flex justify-center items-center">
                                         <button className="hover:bg-black focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-800 py-5 w-96 md:w-full bg-gray-800 text-base font-medium leading-4 text-white">Place Order</button>
                                     </div>
                                 </div>
@@ -169,11 +205,13 @@ const Order = () => {
                                     <div className="flex justify-center md:justify-start xl:flex-col flex-col md:space-x-6 lg:space-x-8 xl:space-x-0 space-y-4 xl:space-y-12 md:space-y-0 md:flex-row  items-center md:items-start ">
                                         <div className="flex justify-center md:justify-start  items-center md:items-start flex-col space-y-4 xl:mt-8">
                                             <p className="text-base font-semibold leading-4 text-center md:text-left text-gray-800">Shipping Address</p>
-                                            <p className="w-48 lg:w-full xl:w-48 text-center md:text-left text-sm leading-5 text-gray-600">{email.address}</p>
+                                            <input onBlur={handelShipping} type="text" class="input input-bordered input-sm w-full max-w-xs" defaultValue={email.address} />
+
                                         </div>
                                         <div className="flex justify-center md:justify-start  items-center md:items-start flex-col space-y-4 ">
                                             <p className="text-base font-semibold leading-4 text-center md:text-left text-gray-800">Billing Address</p>
-                                            <p className="w-48 lg:w-full xl:w-48 text-center md:text-left text-sm leading-5 text-gray-600">{email.address}</p>
+
+                                            <input onBlur={handelBilling} type="text" class="input input-bordered input-sm w-full max-w-xs" defaultValue={email.address} />
                                         </div>
                                     </div>
                                     <div className="flex w-full justify-center items-center md:justify-start md:items-start">

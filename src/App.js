@@ -20,6 +20,7 @@ import ManageProducts from "./Pages/Dahboard/ManageProducts";
 import Portpholio from "./Pages/Portpholio/Portpholio";
 import Purchase from "./Pages/AllProducts/Purchase";
 import Order from "./Pages/AllProducts/Order";
+import RequireAdmin from "./Pages/RequireAuth/RequireAdmin";
 
 
 
@@ -47,10 +48,10 @@ function App() {
             <Route index element={<MyProfile></MyProfile>}></Route>
             <Route path="reviews" element={<AddReview></AddReview>}></Route>
             <Route path="myOrder" element={<MyOrders></MyOrders>}></Route>
-            <Route path="manage_all_orders" element={<ManageAllOrder></ManageAllOrder>}></Route>
-            <Route path="add_product" element={<AddProduct></AddProduct>}></Route>
-            <Route path="make_admin" element={<MakeAdmin></MakeAdmin>}></Route>
-            <Route path="manage_products" element={<ManageProducts></ManageProducts>}></Route>
+            <Route path="manage_all_orders" element={<RequireAdmin><ManageAllOrder></ManageAllOrder></RequireAdmin>}></Route>
+            <Route path="add_product" element={<RequireAdmin><AddProduct></AddProduct></RequireAdmin>}></Route>
+            <Route path="make_admin" element={<RequireAdmin><MakeAdmin></MakeAdmin></RequireAdmin>}></Route>
+            <Route path="manage_products" element={<RequireAdmin><ManageProducts></ManageProducts></RequireAdmin>}></Route>
           </Route>
           {/* <Route path="*" element={<Error></Error>}></Route> */}
 

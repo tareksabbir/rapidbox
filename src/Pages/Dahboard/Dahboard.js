@@ -1,11 +1,13 @@
 import React from 'react';
-// import { useAuthState } from 'react-firebase-hooks/auth';
+import { useAuthState } from 'react-firebase-hooks/auth';
 import { Link, NavLink, Outlet } from 'react-router-dom';
-// import auth from '../../firebase.init';
+import auth from '../../firebase.init';
+import useAdmin from '../../Hooks/useAdmin';
 
 
 const Dashboard = () => {
-    // const [user] = useAuthState(auth);
+    const [user] = useAuthState(auth);
+    const [admin] = useAdmin(user);
 
     return (
         <div>
@@ -23,12 +25,30 @@ const Dashboard = () => {
                     <label for="my-drawer-2" className="drawer-overlay"></label>
                     <ul className="menu p-4 overflow-y-auto w-52 text-base-content bg-black">
                         <li><Link to='/dashboard' className=' text-white hover:bg-gray-400 lg:mt-5 '>My Profile</Link></li>
-                        <li><NavLink to='/dashboard/myOrder' className=' text-white hover:bg-gray-400 lg:mt-5 '>My Orders</NavLink></li>
-                        <li><NavLink to='/dashboard/reviews' className=' text-white hover:bg-gray-400 lg:mt-5 '>Add Review</NavLink></li>
-                        <li><NavLink to='/dashboard/manage_products' className=' text-white hover:bg-gray-400 lg:mt-5'>Manage Products</NavLink></li>
-                        <li><NavLink to='/dashboard/manage_all_orders' className=' text-white hover:bg-gray-400 lg:mt-5  '>Manage All Orders</NavLink></li>
-                        <li><NavLink to='/dashboard/add_product' className=' text-white hover:bg-gray-400 lg:mt-5 '>Add Product</NavLink></li>
-                        <li><NavLink to='/dashboard/make_admin' className=' text-white hover:bg-gray-400 lg:mt-5 '>Make Admin</NavLink></li>
+                        {
+                            !admin && <li><NavLink to='/dashboard/myOrder' className=' text-white hover:bg-gray-400 lg:mt-5 '>My Orders</NavLink></li>
+                        }
+                        {
+                            !admin && <li><NavLink to='/dashboard/reviews' className=' text-white hover:bg-gray-400 lg:mt-5 '>Add Review</NavLink></li>
+                        }
+
+
+                        {
+                            admin && <li><NavLink to='/dashboard/manage_products' className=' text-white hover:bg-gray-400 lg:mt-5'>Manage Products</NavLink></li>
+                        }
+                        {
+                            admin && <li><NavLink to='/dashboard/manage_all_orders' className=' text-white hover:bg-gray-400 lg:mt-5  '>Manage All Orders</NavLink></li>
+                        }
+                        {
+                            admin && <li><NavLink to='/dashboard/add_product' className=' text-white hover:bg-gray-400 lg:mt-5 '>Add Product</NavLink></li>
+                        }
+                        {
+                            admin && <li><NavLink to='/dashboard/make_admin' className=' text-white hover:bg-gray-400 lg:mt-5 '>Make Admin</NavLink></li>
+                        }
+
+
+
+
 
 
 
