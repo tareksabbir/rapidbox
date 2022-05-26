@@ -42,11 +42,11 @@ const AddReview = () => {
 
     return (
         <div>
-            <div class="bg-white py-6 sm:py-8 lg:py-16">
-                <div class="max-w-screen-2xl px-4 md:px-8 mx-auto lg:ml-52">
+            <div className="bg-white py-6 sm:py-8 lg:py-16">
+                <div className="max-w-screen-2xl px-4 md:px-8 mx-auto lg:ml-52">
 
-                    <div class="mb-5 md:mb-5">
-                        <h2 class="text-gray-800 text-xl lg:text-2xl font-bold  mb-4 md:mb-6">Add Your Review Here</h2>
+                    <div className="mb-5 md:mb-5">
+                        <h2 className="text-gray-800 text-xl lg:text-2xl font-bold  mb-4 md:mb-6">Add Your Review Here</h2>
                     </div>
                     <form onSubmit={reviewHandle} className="max-w-screen-md grid sm:grid-cols-2 gap-4">
                         <div>

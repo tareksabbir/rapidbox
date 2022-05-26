@@ -124,7 +124,7 @@ const Order = () => {
                                                 ${product.price}
                                             </p>
 
-                                            <input onBlur={countPrice} type="text" placeholder="Type here" defaultValue={product.minimumOrder} class="input input-bordered input-sm w-full max-w-xs" />
+                                            <input onBlur={countPrice} type="text" placeholder="Type here" defaultValue={product.minimumOrder} className="input input-bordered input-sm w-full max-w-xs" />
 
                                             <p className="text-base xl:text-lg font-semibold leading-6 text-gray-800">${newprice ? newprice : orderPrice}</p>
                                         </div>
@@ -162,8 +162,8 @@ const Order = () => {
                                     <h3 className="text-xl font-semibold leading-5 text-gray-800">Shipping</h3>
                                     <div className="flex justify-between items-start w-full">
                                         <div className="flex justify-center items-center space-x-4">
-                                            <div class="w-8 h-8">
-                                                <img class="w-full h-full" alt="logo" src="https://i.ibb.co/L8KSdNQ/image-3.png" />
+                                            <div className="w-8 h-8">
+                                                <img className="w-full h-full" alt="logo" src="https://i.ibb.co/L8KSdNQ/image-3.png" />
                                             </div>
                                             <div className="flex flex-col justify-start items-center">
                                                 <p className="text-lg leading-6 font-semibold text-gray-800">
@@ -205,13 +205,13 @@ const Order = () => {
                                     <div className="flex justify-center md:justify-start xl:flex-col flex-col md:space-x-6 lg:space-x-8 xl:space-x-0 space-y-4 xl:space-y-12 md:space-y-0 md:flex-row  items-center md:items-start ">
                                         <div className="flex justify-center md:justify-start  items-center md:items-start flex-col space-y-4 xl:mt-8">
                                             <p className="text-base font-semibold leading-4 text-center md:text-left text-gray-800">Shipping Address</p>
-                                            <input onBlur={handelShipping} type="text" class="input input-bordered input-sm w-full max-w-xs" defaultValue={email.address} />
+                                            <input onBlur={handelShipping} type="text" className="input input-bordered input-sm w-full max-w-xs" defaultValue={email.address} />
 
                                         </div>
                                         <div className="flex justify-center md:justify-start  items-center md:items-start flex-col space-y-4 ">
                                             <p className="text-base font-semibold leading-4 text-center md:text-left text-gray-800">Billing Address</p>
 
-                                            <input onBlur={handelBilling} type="text" class="input input-bordered input-sm w-full max-w-xs" defaultValue={email.address} />
+                                            <input onBlur={handelBilling} type="text" className="input input-bordered input-sm w-full max-w-xs" defaultValue={email.address} />
                                         </div>
                                     </div>
                                     <div className="flex w-full justify-center items-center md:justify-start md:items-start">

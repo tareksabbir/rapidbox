@@ -80,22 +80,22 @@ const Register = () => {
                 <form onSubmit={handleCreateUser} className="max-w-lg border rounded-lg mx-auto">
                     <div className="flex flex-col gap-4 p-4 md:p-8">
                         <div>
-                            <label htmlFor="text" className="inline-block text-gray-800 text-sm sm:text-base mb-2">Your Name</label>
+                            <label for="text" className="inline-block text-gray-800 text-sm sm:text-base mb-2">Your Name</label>
                             <input onBlur={handleNamelBlur} name="name" className="w-full bg-gray-50 text-gray-800 border focus:ring ring-indigo-300 rounded outline-none transition duration-100 px-3 py-2" required type="text" />
                         </div>
                         <div>
-                            <label htmlFor="email" className="inline-block text-gray-800 text-sm sm:text-base mb-2">Email</label>
+                            <label for="email" className="inline-block text-gray-800 text-sm sm:text-base mb-2">Email</label>
                             <input onBlur={handleEmailBlur} name="email" className="w-full bg-gray-50 text-gray-800 border focus:ring ring-indigo-300 rounded outline-none transition duration-100 px-3 py-2" required type="email" />
                         </div>
 
                         <div>
-                            <label htmlFor="password" className="inline-block text-gray-800 text-sm sm:text-base mb-2">Password</label>
+                            <label for="password" className="inline-block text-gray-800 text-sm sm:text-base mb-2">Password</label>
                             <input onBlur={handlePasswordBlur} name="password" className="w-full bg-gray-50 text-gray-800 border focus:ring ring-indigo-300 rounded outline-none transition duration-100 px-3 py-2" required type="password" />
                         </div>
                         <div>
-                            <label htmlFor="password" className="inline-block text-gray-800 text-sm sm:text-base mb-2">Confirm Password</label>
+                            <label for="password" className="inline-block text-gray-800 text-sm sm:text-base mb-2">Confirm Password</label>
                             <input onBlur={handleConfirmPassword} name="password" className="w-full bg-gray-50 text-gray-800 border focus:ring ring-indigo-300 rounded outline-none transition duration-100 px-3 py-2" required type="password" />
-                        </div>
+                        </div >
 
                         <button className="block bg-gray-800 hover:bg-gray-700 active:bg-gray-600 focus-visible:ring ring-gray-300 text-white text-sm md:text-base font-semibold text-center rounded-lg outline-none transition duration-100 px-8 py-3">Resister</button>
 
@@ -115,14 +115,14 @@ const Register = () => {
 
                             Continue with Google
                         </button>
-                    </div>
+                    </div >
 
                     <div className="flex justify-center items-center bg-gray-100 p-4">
                         <p className="text-gray-500 text-sm text-center">Already have an account? <Link to='/login' className="text-indigo-500 hover:text-indigo-600 active:text-indigo-700 transition duration-100">Login</Link></p>
                     </div>
-                </form>
-            </div>
-        </div>
+                </form >
+            </div >
+        </div >
     );
 };
 

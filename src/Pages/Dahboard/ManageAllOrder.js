@@ -9,11 +9,11 @@ const ManageAllOrder = () => {
     }, [])
     return (
         <div>
-            <div class="overflow-x-auto">
+            <div className="overflow-x-auto">
                 <div className="pl-4 lg:px-10 2xl:px-20 flex flex-row lg:py-5 items-end space-x-4">
                     <h1 className="text-2xl font-semibold leading-9 text-gray-800">Manage All Orders</h1>
                 </div>
-                <table class="table table-zebra w-full">
+                <table className="table table-zebra w-full">
                     <thead>
                         <tr>
                             <th></th>

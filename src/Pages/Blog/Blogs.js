@@ -27,7 +27,7 @@ const Blog = () => {
                                     <p className="leading-relaxed 
                                 mb-4">Techniques for improving React performance include keeping component state local when possible. React component memory to avoid needless re-renders, React code splitting using dynamic import(), React windowing or list virtualization, React lazy loading images To properly optimize our React application, we must first identify and resolve a performance issue. We've covered how to measure the performance of a React application and how to improve it for a better user experience in this article.</p>
                                     <Link to='/' className="text-indigo-500 inline-flex items-center">Learn More
-                                        <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" className="w-4 h-4 ml-2" viewBox="0 0 24 24">
+                                        <svg fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" className="w-4 h-4 ml-2" viewBox="0 0 24 24">
                                             <path d="M5 12h14M12 5l7 7-7 7"></path>
                                         </svg>
                                     </Link>
@@ -60,7 +60,7 @@ const Blog = () => {
                                         Apollo Link State React Context API Hooks
                                         However, we'll concentrate on the setState() method.</p>
                                     <Link to='/' className="text-indigo-500 inline-flex items-center">Learn More
-                                        <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" className="w-4 h-4 ml-2" viewBox="0 0 24 24">
+                                        <svg fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" className="w-4 h-4 ml-2" viewBox="0 0 24 24">
                                             <path d="M5 12h14M12 5l7 7-7 7"></path>
                                         </svg>
                                     </Link>
@@ -89,7 +89,7 @@ const Blog = () => {
                                 <div className="sm:w-2/3 sm:pl-8 sm:py-8 sm:border-l border-gray-200 sm:border-t-0 border-t mt-4 pt-4 sm:mt-0 text-center sm:text-left">
                                     <p className="leading-relaxed mb-4">Every object, along with its methods and properties, has a secret internal property called [[Prototype]]. Prototypal inheritance is a javascript feature that allows you to add methods and properties to objects. It's a method that allows one object to inherit the properties and methods of another. We use Object.getPrototypeOf and Object.setPrototypeOf to get and set the [[Prototype]] of an object, respectively. It is now set using __proto__ in current programming languages.</p>
                                     <Link to='/' className="text-indigo-500 inline-flex items-center">Learn More
-                                        <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" className="w-4 h-4 ml-2" viewBox="0 0 24 24">
+                                        <svg fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" className="w-4 h-4 ml-2" viewBox="0 0 24 24">
                                             <path d="M5 12h14M12 5l7 7-7 7"></path>
                                         </svg>
                                     </Link>
@@ -119,7 +119,7 @@ const Blog = () => {
                                     <p className="leading-relaxed  mb-4">Unit tests are automated tests designed and executed by software engineers to confirm that a piece of an application (referred to as a "unit") matches its design and operates as intended. A unit in procedural programming can be a whole module, but it's more likely to be a single function or process.
                                         Unit tests provide the advantage of isolating a function, class, or method and just testing that section of code. Individual components of higher quality contribute to overall system robustness. As a result, the code is trustworthy. The nature of the debugging process is likewise altered by unit tests.</p>
                                     <Link to='/' className="text-indigo-500 inline-flex items-center">Learn More
-                                        <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" className="w-4 h-4 ml-2" viewBox="0 0 24 24">
+                                        <svg fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" className="w-4 h-4 ml-2" viewBox="0 0 24 24">
                                             <path d="M5 12h14M12 5l7 7-7 7"></path>
                                         </svg>
                                     </Link>
@@ -153,7 +153,7 @@ const Blog = () => {
                                         This.state is not changed instantly when you directly update the state. Instead, it generates a pending state transition, which will only yield the current value if accessed after using this function.
                                         You'll lose control of the state in all of your components.</p>
                                     <Link to='/' className="text-indigo-500 inline-flex items-center">Learn More
-                                        <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" className="w-4 h-4 ml-2" viewBox="0 0 24 24">
+                                        <svg fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" className="w-4 h-4 ml-2" viewBox="0 0 24 24">
                                             <path d="M5 12h14M12 5l7 7-7 7"></path>
                                         </svg>
                                     </Link>

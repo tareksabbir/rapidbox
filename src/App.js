@@ -21,6 +21,7 @@ import Portpholio from "./Pages/Portpholio/Portpholio";
 import Purchase from "./Pages/AllProducts/Purchase";
 import Order from "./Pages/AllProducts/Order";
 import RequireAdmin from "./Pages/RequireAuth/RequireAdmin";
+import Payment from "./Pages/Dahboard/Payment";
 
 
 
@@ -48,6 +49,7 @@ function App() {
             <Route index element={<MyProfile></MyProfile>}></Route>
             <Route path="reviews" element={<AddReview></AddReview>}></Route>
             <Route path="myOrder" element={<MyOrders></MyOrders>}></Route>
+            <Route path="payment/:id" element={<Payment></Payment>}></Route>
             <Route path="manage_all_orders" element={<RequireAdmin><ManageAllOrder></ManageAllOrder></RequireAdmin>}></Route>
             <Route path="add_product" element={<RequireAdmin><AddProduct></AddProduct></RequireAdmin>}></Route>
             <Route path="make_admin" element={<RequireAdmin><MakeAdmin></MakeAdmin></RequireAdmin>}></Route>

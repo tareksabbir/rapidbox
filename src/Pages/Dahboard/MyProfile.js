@@ -52,25 +52,25 @@ const MyProfile = () => {
 
     return (
         <>
-            <section class="text-black body-font">
-                <div class="container px-5  mx-auto flex flex-col">
-                    <div class="lg:w-5/6 w-full mt-10 mx-auto bg-gray-100 p-14">
-                        <div class="flex flex-col sm:flex-row shadow-2xl ">
-                            <div class="sm:w-3/4 text-center sm:pr-8 sm:py-8">
-                                <div class="w-35 h-35 rounded-full inline-flex items-center justify-center bg-slate-50">
-                                    <img src={user.photoURL ? user.photoURL : email.photoURL} alt="" class="w-28 h-28 rounded-full" />
+            <section className="text-black body-font">
+                <div className="container px-5  mx-auto flex flex-col">
+                    <div className="lg:w-5/6 w-full mt-10 mx-auto bg-gray-100 p-14">
+                        <div className="flex flex-col sm:flex-row shadow-2xl ">
+                            <div className="sm:w-3/4 text-center sm:pr-8 sm:py-8">
+                                <div className="w-35 h-35 rounded-full inline-flex items-center justify-center bg-slate-50">
+                                    <img src={user.photoURL ? user.photoURL : email.photoURL} alt="" className="w-28 h-28 rounded-full" />
                                 </div>
-                                <div class="flex flex-col items-center text-center justify-center">
-                                    <h2 class="font-medium title-font mt-4 text-gray-900 ">{email.displayName ? email.displayName : user.displayName}</h2>
-                                    <div class="w-12 h-1 bg-indigo-500 rounded mt-2 mb-4"></div>
+                                <div className="flex flex-col items-center text-center justify-center">
+                                    <h2 className="font-medium title-font mt-4 text-gray-900 ">{email.displayName ? email.displayName : user.displayName}</h2>
+                                    <div className="w-12 h-1 bg-indigo-500 rounded mt-2 mb-4"></div>
                                 </div>
                             </div>
-                            <div class="sm:w-2/3 sm:pl-8 sm:py-8 sm:border-l border-gray-200 sm:border-t-0 border-t mt-4 pt-4 sm:mt-0 text-center sm:text-left">
-                                <p class="leading-relaxed  font-medium mb-2">Email : <span class="text-sm font-normal mb-4">{user?.email}</span></p>
-                                <p class="leading-relaxed   mb-2 font-medium">Gender : <span class="text-sm font-normal mb-4">{email.gender}</span></p>
-                                <p class="leading-relaxed  font-medium mb-2">About Me : <span class="text-sm font-normal mb-4">{email.about}</span></p>
-                                <p class="leading-relaxed  font-medium mb-2">Education : <span class="text-sm font-normal mb-4">{email.education}</span></p>
-                                <p class="leading-relaxed  font-medium mb-2">Company Name : <span class="text-sm font-normal mb-4">{email.company}</span></p>
+                            <div className="sm:w-2/3 sm:pl-8 sm:py-8 sm:border-l border-gray-200 sm:border-t-0 border-t mt-4 pt-4 sm:mt-0 text-center sm:text-left">
+                                <p className="leading-relaxed  font-medium mb-2">Email : <span className="text-sm font-normal mb-4">{user?.email}</span></p>
+                                <p className="leading-relaxed   mb-2 font-medium">Gender : <span className="text-sm font-normal mb-4">{email.gender}</span></p>
+                                <p className="leading-relaxed  font-medium mb-2">About Me : <span className="text-sm font-normal mb-4">{email.about}</span></p>
+                                <p className="leading-relaxed  font-medium mb-2">Education : <span className="text-sm font-normal mb-4">{email.education}</span></p>
+                                <p className="leading-relaxed  font-medium mb-2">Company Name : <span className="text-sm font-normal mb-4">{email.company}</span></p>
                             </div>
                         </div>
 

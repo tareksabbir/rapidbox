@@ -70,12 +70,12 @@ const UsersRow = ({ user, refetch }) => {
                 <td>{email}</td>
                 <td>
                     {
-                        role !== 'admin' && <button onClick={makeAdmin} class="btn btn-xs text-white bg-primary border-0">Admin</button>
+                        role !== 'admin' && <button onClick={makeAdmin} className="btn btn-xs text-white bg-primary border-0">Admin</button>
                     }
 
                 </td>
                 <td>
-                    <button onClick={() => userDelete(user._id)} class="btn btn-xs text-white">Delete</button>
+                    <button onClick={() => userDelete(user._id)} className="btn btn-xs text-white">Delete</button>
 
 
                 </td>

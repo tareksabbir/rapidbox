@@ -18,7 +18,7 @@ const Error = () => {
                     </div>
 
                     <div className="h-80 md:h-auto bg-gray-100 overflow-hidden shadow-lg rounded-lg relative">
-                        <img src="https://images.unsplash.com/photo-1626790680787-de5e9a07bcf2?auto=format&q=75&fit=crop&w=600" loading="lazy" alt="" class="w-full h-full object-cover object-center absolute inset-0" />
+                        <img src="https://images.unsplash.com/photo-1626790680787-de5e9a07bcf2?auto=format&q=75&fit=crop&w=600" loading="lazy" alt="" className="w-full h-full object-cover object-center absolute inset-0" />
                     </div>
                 </div>
             </div>

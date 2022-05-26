@@ -15,11 +15,11 @@ const MakeAdmin = () => {
     }
     return (
         <div>
-            <div class="overflow-x-auto">
+            <div className="overflow-x-auto">
                 <div className="pl-4 lg:px-10 2xl:px-20 flex flex-row lg:py-5 items-end space-x-4">
                     <h1 className="text-2xl font-semibold leading-9 text-gray-800">Make Admin</h1>
                 </div>
-                <table class="table w-full">
+                <table className="table w-full">
 
                     <thead>
                         <tr>
