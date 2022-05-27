@@ -32,7 +32,7 @@ const Payment = () => {
                     <h2 className='mt-5 font-semibold mb-10'>Total Price : ${order.bill}</h2>
 
                     <Elements stripe={stripePromise}>
-                        <CheckoutForm />
+                        <CheckoutForm order={order} />
                     </Elements>
                 </div>
 
