@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
 
 const ManageAllOrder = () => {
     const [orders, setOrders] = useState([])
@@ -8,6 +7,8 @@ const ManageAllOrder = () => {
             .then(res => res.json())
             .then(data => setOrders(data))
     }, [])
+
+
     return (
         <div>
             <div className="overflow-x-auto">
@@ -32,10 +33,13 @@ const ManageAllOrder = () => {
                                 <td>{order.buyerName}</td>
                                 <td>{order.name}</td>
                                 <td>${order.bill}</td>
-                                <td>{(order.bill && !order.paid) && <button className="btn btn-xs text-white">Not Paid</button>}
-                                    {(order.bill && order.paid) && <button className="btn btn-xs btn-primary text-white">Make UnPaid</button>}</td>
                                 <td>
-                                    <button className="btn btn-xs btn-secondary  text-white">Shipped</button></td>
+                                    {(!order.paid) && <button className="btn btn-xs text-white">Unpaid Order</button>}
+                                    {(order.paid) && <button className="btn btn-xs btn-primary text-white ">Pending</button>}</td>
+                                <td>
+
+                                    {(order.bill && order.paid) && <button className="btn btn-xs bg-green-800 text-white ">Ship Now</button>}
+                                </td>
 
                             </tr>)
                         }

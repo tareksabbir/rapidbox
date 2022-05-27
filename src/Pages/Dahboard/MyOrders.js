@@ -53,7 +53,7 @@ const MyOrders = () => {
                             <th>Name</th>
                             <th>Transaction Id</th>
                             <th>Total Bill</th>
-                            <th>Status</th>
+
                             <th>Payment</th>
                             <th>Cancel Order</th>
 
@@ -68,7 +68,7 @@ const MyOrders = () => {
                                     {(order.bill && order.paid) && <span className='text-black'>{order.transactionId}</span>}
                                 </td>
                                 <td>$ {order.bill}</td>
-                                <td>Processing</td>
+
                                 <td>
                                     {(order.bill && !order.paid) && <Link to={`/dashboard/payment/${order._id}`} className="btn btn-xs text-white">Pay</Link>}
                                     {(order.bill && order.paid) && <span className='text-black'>Paid</span>}
