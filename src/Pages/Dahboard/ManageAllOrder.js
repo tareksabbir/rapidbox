@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 
 const ManageAllOrder = () => {
     const [orders, setOrders] = useState([])
@@ -31,8 +32,11 @@ const ManageAllOrder = () => {
                                 <td>{order.buyerName}</td>
                                 <td>{order.name}</td>
                                 <td>${order.bill}</td>
-                                <td>Unpaid</td>
-                                <td>Pending</td>
+                                <td>{(order.bill && !order.paid) && <button className="btn btn-xs text-white">Not Paid</button>}
+                                    {(order.bill && order.paid) && <button className="btn btn-xs btn-primary text-white">Make UnPaid</button>}</td>
+                                <td>
+                                    <button className="btn btn-xs btn-secondary  text-white">Shipped</button></td>
+
                             </tr>)
                         }
 

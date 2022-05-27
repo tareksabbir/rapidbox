@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { Link } from 'react-router-dom';
+import Swal from 'sweetalert2';
 import auth from '../../firebase.init';
 
 const MyOrders = () => {
@@ -14,6 +15,31 @@ const MyOrders = () => {
                 .then(data => setOrders(data))
         }
     }, [user])
+    const orderDelete = id => {
+        const proceed = window.confirm('Are you sure you want to delete this user?');
+        if (proceed) {
+            console.log(id);
+            const url = `http://localhost:5000/order/${id}`
+            fetch(url, {
+                method: 'DELETE'
+            })
+                .then(res => res.json())
+                .then(data => {
+                    if (data.deletedCount > 0) {
+                        Swal.fire(
+                            'Item Deleted!',
+                            'Your Item Deleted Successfully!',
+                            'success'
+                        )
+                        const remaining = orders.filter(order => order._id !== id);
+                        setOrders(remaining);
+                    }
+                })
+        }
+
+    }
+
+
     return (
         <div>
             <div className="overflow-x-auto">
@@ -25,22 +51,33 @@ const MyOrders = () => {
                         <tr>
                             <th></th>
                             <th>Name</th>
-                            <th>Order Id</th>
+                            <th>Transaction Id</th>
                             <th>Total Bill</th>
+                            <th>Status</th>
                             <th>Payment</th>
+                            <th>Cancel Order</th>
+
                         </tr>
                     </thead>
                     <tbody>
                         {
-                            orders.map((order, index) => <tr>
+                            orders.map((order, index) => <tr key={order._id}>
                                 <th>{index + 1}</th>
                                 <td>{order.name}</td>
-                                <td>{order.orderId}</td>
+                                <td>
+                                    {(order.bill && order.paid) && <span className='text-black'>{order.transactionId}</span>}
+                                </td>
                                 <td>$ {order.bill}</td>
+                                <td>Processing</td>
                                 <td>
                                     {(order.bill && !order.paid) && <Link to={`/dashboard/payment/${order._id}`} className="btn btn-xs text-white">Pay</Link>}
                                     {(order.bill && order.paid) && <span className='text-black'>Paid</span>}
                                 </td>
+                                <td>
+                                    {(order.bill && !order.paid) && <button onClick={() => orderDelete(order._id)} className="btn btn-xs text-white">Cancel</button>}
+                                    {(order.bill && order.paid) && <span className='text-black'>Can Not</span>}
+                                </td>
+
                             </tr>)
                         }
                     </tbody>

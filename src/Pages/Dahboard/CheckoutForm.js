@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { CardElement, useElements, useStripe } from '@stripe/react-stripe-js';
+import Loading from '../Shared/Loading';
 
 
 const CheckoutForm = ({ order }) => {
@@ -7,9 +8,12 @@ const CheckoutForm = ({ order }) => {
     const elements = useElements();
     const [cardError, setCardError] = useState('')
     const [successfull, setSuccessfull] = useState('')
+    const [processing, setProcessing] = useState(false)
     const [clientSecret, setClientSecret] = useState("");
     const [transactionId, setTransactionId] = useState("");
-    const { bill, buyerName, buyerEmail } = order;
+
+
+    const { _id, bill, buyerName, buyerEmail } = order;
 
 
     useEffect(() => {
@@ -44,8 +48,11 @@ const CheckoutForm = ({ order }) => {
             type: 'card',
             card,
         });
+
         setCardError(error?.message || '')
         setSuccessfull('');
+        setProcessing(true);
+
         const { paymentIntent, error: intentError } = await stripe.confirmCardPayment(
             clientSecret,
             {
@@ -60,12 +67,31 @@ const CheckoutForm = ({ order }) => {
         );
         if (intentError) {
             setCardError(intentError?.message);
+            setProcessing(false);
 
         } else {
             setCardError('');
             setTransactionId(paymentIntent.id)
             console.log(paymentIntent);
             setSuccessfull('Congratulation! Your payment is completed');
+
+            const payment = {
+                tools: _id,
+                transactionId: paymentIntent.id,
+            }
+
+            fetch(`http://localhost:5000/order/${_id}`, {
+                method: 'PATCH',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(payment)
+            }).then(res => res.json())
+                .then(data => {
+                    setProcessing(false);
+                    console.log(data);
+                })
+
         }
     }
 
@@ -89,7 +115,7 @@ const CheckoutForm = ({ order }) => {
                         },
                     }}
                 />
-                <button className='btn btn-primary btn-xs mt-5' type="submit" disabled={!stripe || !clientSecret}>
+                <button className='btn btn-primary btn-xs mt-5' type="submit" disabled={!stripe || !clientSecret || successfull}>
                     Pay
                 </button>
             </form>
@@ -101,6 +127,9 @@ const CheckoutForm = ({ order }) => {
                     <p className='text-green-500 mt-2'>{successfull}</p>
                     <p className='text-blue-800 font-bold mt-2'>Your Transaction Id : {transactionId}</p>
                 </div>
+            }
+            {
+                processing && <Loading></Loading>
             }
         </>
 
