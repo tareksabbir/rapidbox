@@ -20,7 +20,7 @@ const AddReview = () => {
         const review = { name, email, stars, massage, date }
         console.log(review)
 
-        fetch('http://localhost:5000/review', {
+        fetch('https://salty-ravine-28731.herokuapp.com/review', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',

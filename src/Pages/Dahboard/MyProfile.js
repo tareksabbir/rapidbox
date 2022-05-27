@@ -9,7 +9,7 @@ const MyProfile = () => {
 
     const [email, setEmail] = useState({})
     useEffect(() => {
-        const url = `http://localhost:5000/user/${user.email}`;
+        const url = `https://salty-ravine-28731.herokuapp.com/user/${user.email}`;
         fetch(url)
             .then(res => res.json())
             .then(data => setEmail(data))
@@ -30,7 +30,7 @@ const MyProfile = () => {
 
         const profile = { displayName, gender, education, photoURL, about, company, email, address }
         console.log(profile);
-        const url = `http://localhost:5000/user/${email}`;
+        const url = `https://salty-ravine-28731.herokuapp.com/user/${email}`;
         fetch(url, {
             method: 'PATCH',
             headers: {

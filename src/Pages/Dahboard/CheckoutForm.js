@@ -17,7 +17,7 @@ const CheckoutForm = ({ order }) => {
 
 
     useEffect(() => {
-        fetch('http://localhost:5000/create-payment-intent', {
+        fetch('https://salty-ravine-28731.herokuapp.com/create-payment-intent', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -80,7 +80,7 @@ const CheckoutForm = ({ order }) => {
                 transactionId: paymentIntent.id,
             }
 
-            fetch(`http://localhost:5000/order/${_id}`, {
+            fetch(`https://salty-ravine-28731.herokuapp.com/order/${_id}`, {
                 method: 'PATCH',
                 headers: {
                     'Content-Type': 'application/json',

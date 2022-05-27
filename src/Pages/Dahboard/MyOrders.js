@@ -10,7 +10,7 @@ const MyOrders = () => {
     const [orders, setOrders] = useState([]);
     useEffect(() => {
         if (user) {
-            fetch(`http://localhost:5000/order/buyer?buyerEmail=${user.email}`)
+            fetch(`https://salty-ravine-28731.herokuapp.com/order/buyer?buyerEmail=${user.email}`)
                 .then(res => res.json())
                 .then(data => setOrders(data))
         }
@@ -19,7 +19,7 @@ const MyOrders = () => {
         const proceed = window.confirm('Are you sure you want to delete this user?');
         if (proceed) {
             console.log(id);
-            const url = `http://localhost:5000/order/${id}`
+            const url = `https://salty-ravine-28731.herokuapp.com/order/${id}`
             fetch(url, {
                 method: 'DELETE'
             })

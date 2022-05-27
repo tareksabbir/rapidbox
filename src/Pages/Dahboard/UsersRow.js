@@ -9,7 +9,7 @@ const UsersRow = ({ user, refetch }) => {
     const { email, role, } = user;
     const [users, setUsers] = useState([])
     const makeAdmin = () => {
-        fetch(`http://localhost:5000/user/admin/${email}`, {
+        fetch(`https://salty-ravine-28731.herokuapp.com/user/admin/${email}`, {
             method: 'PUT',
             headers: {
                 'authorization': `Bearer ${localStorage.getItem('accessToken')}`
@@ -43,7 +43,7 @@ const UsersRow = ({ user, refetch }) => {
         const proceed = window.confirm('Are you sure you want to delete this user?');
         if (proceed) {
             console.log(id);
-            const url = `http://localhost:5000/user/${id}`
+            const url = `https://salty-ravine-28731.herokuapp.com/user/${id}`
             fetch(url, {
                 method: 'DELETE'
             })

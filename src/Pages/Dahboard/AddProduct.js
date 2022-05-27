@@ -22,7 +22,7 @@ const AddProduct = () => {
         const product = { name, price, img, description, email, admin, minimumOrder, available }
         console.log(product);
 
-        fetch('http://localhost:5000/tools', {
+        fetch('https://salty-ravine-28731.herokuapp.com/tools', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',

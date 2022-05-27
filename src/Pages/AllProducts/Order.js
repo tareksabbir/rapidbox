@@ -11,14 +11,14 @@ const Order = () => {
     const [email, setEmail] = useState({})
 
     useEffect(() => {
-        const url = `http://localhost:5000/tools/${id}`;
+        const url = `https://salty-ravine-28731.herokuapp.com/tools/${id}`;
         fetch(url)
             .then(res => res.json())
             .then(data => setProduct(data))
     }, [id])
 
     useEffect(() => {
-        const url = `http://localhost:5000/user/${user.email}`;
+        const url = `https://salty-ravine-28731.herokuapp.com/user/${user.email}`;
         fetch(url)
             .then(res => res.json())
             .then(data => setEmail(data))
@@ -67,7 +67,7 @@ const Order = () => {
         const orderInfo = { name, orderId, bill, buyerEmail, buyerName, shippingAddress, billaddress }
         console.log(orderInfo)
 
-        fetch('http://localhost:5000/order', {
+        fetch('https://salty-ravine-28731.herokuapp.com/order', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',

@@ -6,7 +6,7 @@ import Footer from '../Footer/Footer';
 const Review = () => {
     const [reviews, setReviews] = useState([])
     useEffect(() => {
-        fetch('http://localhost:5000/review')
+        fetch('https://salty-ravine-28731.herokuapp.com/review')
             .then(res => res.json())
             .then(data => setReviews(data))
     }, [])

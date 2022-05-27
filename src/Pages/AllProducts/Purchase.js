@@ -5,7 +5,7 @@ const Purchase = () => {
     const { id } = useParams();
     const [product, setProduct] = useState({});
     useEffect(() => {
-        const url = `http://localhost:5000/tools/${id}`;
+        const url = `https://salty-ravine-28731.herokuapp.com/tools/${id}`;
         fetch(url)
             .then(res => res.json())
             .then(data => setProduct(data))

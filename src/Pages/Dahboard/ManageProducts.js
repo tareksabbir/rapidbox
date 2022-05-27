@@ -4,7 +4,7 @@ import Swal from "sweetalert2";
 const ManageProducts = () => {
     const [products, setProducts] = useState([]);
     useEffect(() => {
-        fetch('http://localhost:5000/tools')
+        fetch('https://salty-ravine-28731.herokuapp.com/tools')
             .then(res => res.json())
             .then(data => setProducts(data))
     }, [])
@@ -13,7 +13,7 @@ const ManageProducts = () => {
         const proceed = window.confirm('Are you sure you want to delete this product?');
         if (proceed) {
             console.log(id);
-            const url = `http://localhost:5000/tools/${id}`
+            const url = `https://salty-ravine-28731.herokuapp.com/tools/${id}`
             fetch(url, {
                 method: 'DELETE'
             })
